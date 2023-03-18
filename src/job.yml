@@ -11,6 +11,6 @@ inputs:
     path: azureml:training_data:3
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: test-tyrsensei
+compute: test
 experiment_name: test
 description: test
