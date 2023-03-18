@@ -4,7 +4,7 @@ command: >-
   python
   train.py
   --training_data
-  ${inputs.training_data}/diabetes-dev.csv
+  ${{inputs.training_data}}/diabetes-dev.csv
 inputs:
   training_data: 
     type: uri_folder 
