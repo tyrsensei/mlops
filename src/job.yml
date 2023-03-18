@@ -6,7 +6,7 @@ command: >-
   --training_data ${{inputs.training_data}}
   --reg_rate ${{inputs.reg_rate}}
 inputs:
-  training_data_file: 
+  training_data: 
     type: uri_folder 
     path: azureml:training_data:3
   reg_rate: 0.01
