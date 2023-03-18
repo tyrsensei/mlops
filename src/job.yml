@@ -8,7 +8,8 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: azureml:training_data:2
+    path: azureml:training_data:3
+    
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: test-tyrsensei
