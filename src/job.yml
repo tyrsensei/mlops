@@ -3,8 +3,8 @@ code: model
 command: >-
   python
   train.py
-  --training_data
-  ${{inputs.training_data}}/diabetes-dev.csv
+  --training_data ${{inputs.training_data}}/diabetes-dev.csv
+  --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
     type: uri_folder 
