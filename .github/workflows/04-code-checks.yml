@@ -21,6 +21,9 @@ jobs:
     - name: Run linting tests
       run: | 
         flake8 src/model/
+    - name: Install python deps
+      run: |
+        pip install
     - name: Run unit tests
       run: |
         pytest tests/
