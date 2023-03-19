@@ -23,7 +23,7 @@ jobs:
         flake8 src/model/
     - name: Install python deps
       run: |
-        pip install
+        pip install -r requirements.txt
     - name: Run unit tests
       run: |
         pytest tests/
