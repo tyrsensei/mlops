@@ -1,0 +1,41 @@
+name: Train on environments
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  dev:
+    name: Train on dev
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Model training
+      run: |
+        az ml job create --file src/job-dev.yml -g test -w test --stream
+
+  prod:
+    name: Train on prod
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Model training
+      run: |
+        az ml job create --file src/job-prod.yml -g test -w test
